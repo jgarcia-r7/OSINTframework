@@ -1,0 +1,5 @@
+art==5.5
+colorama==0.4.4
+googlesearch_python == 1.0.1
+requests==2.25.1
+simplejson==3.17.6
