@@ -11,6 +11,7 @@ from colorama import Fore, Style
 # Define colorama colors.
 GREEN = Fore.GREEN
 RED = Fore.RED
+BLUE = Fore.BLUE
 WHITE = Fore.WHITE
 YELLOW = Fore.YELLOW
 CYAN = Fore.CYAN
@@ -82,12 +83,12 @@ Module Options (auxiliary/breachdb):
         with open(cls.outfile,"wt") as results_file:
             results_file.write(final_table)
 
-        print(CYAN + "[*]" + RST + " Top 3 Passwords for {}".format(cls.domain))
+        print(BLUE + "[*]" + RST + " Top 3 Passwords for {}".format(cls.domain))
         print(finalpw_table.replace("(","").replace(")","").replace(","," :").replace("'",""))
     
         print(GREEN + "[+]" + RST + " Results written to {}\n".format(cls.outfile))
 
 
 def main():
-    print(CYAN + "\n[*]" + RST + " Querying pwnd.tiden.io for domain: " + BreachDB.domain + " with limit " + str(BreachDB.limit) + "...")
+    print(BLUE + "\n[*]" + RST + " Querying pwnd.tiden.io for domain: " + BreachDB.domain + " with limit " + str(BreachDB.limit) + "...")
     BreachDB.init_query()
