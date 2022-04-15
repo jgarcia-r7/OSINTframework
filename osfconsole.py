@@ -11,7 +11,7 @@ from cmd import Cmd
 from colorama import Fore, Style
 from time import sleep
 from art import *
-from modules.auxiliary import dork, breachdb,  intelx, extrametapy, exiftool
+from modules.auxiliary import dork, breachdb,  intelx, extrametapy, exiftool, pw2mask
 
 # Define colorama colors.
 GREEN = Fore.GREEN
@@ -39,9 +39,9 @@ print(BRIGHT + RED + osint_art + RST)
 
 
 # Information on OSINTframework.
-print(RED + "=[ OSINTframework v0.1 ]=" + RST)
+print(RED + "=[ OSINTframework v0.1a ]=" + RST)
 print(BRIGHT + PINK + "=[ Written by. Jessi ]=" + RST)
-print(YELLOW + "=[ 4 modules ]=\n" + RST)
+print(YELLOW + "=[ 5 modules ]=\n" + RST)
 
 
 # Module list - for autocomplete
@@ -53,7 +53,9 @@ modules = [
     'breachdb',
     'auxiliary/breachdb',
     'extrametapy',
-    'auxiliary/extrametapy'
+    'auxiliary/extrametapy',
+    'pw2mask',
+    'auxiliary/pw2mask'
 ]
 
 # Module list - screen
@@ -67,6 +69,7 @@ Available Modules
     intelx_search                       Query the public Intelx DB for email addresses
     breachdb                            Query the R7 breach DB for info
     extrametapy                         Dork for office documents and extract metadata
+    pw2mask                             Get hashcat-like masks from passwords
     
 """
 
@@ -87,7 +90,13 @@ module_options = [
     'api_key',
     'API_KEY',
     'filetypes',
-    'FILETYPES'
+    'FILETYPES',
+    'passwords_file',
+    'PASSWORDS_FILE',
+    'mask_file',
+    'MASK_FILE',
+    'common_count',
+    'COMMON_COUNT'
 ]
 
 # General list - for autocomplete
@@ -141,6 +150,8 @@ class osfPrompt(Cmd):
                 breachdb.BreachDB.print_help()
             elif 'extrametapy' in self.module:
                 extrametapy.extraMetaPy.print_help()
+            elif 'pw2mask' in self.module:
+                pw2mask.pw2mask.print_help()
 
     do_options = do_show # Shortcut
 
@@ -172,6 +183,9 @@ class osfPrompt(Cmd):
             outfile = extrametapy.extraMetaPy.outfile
             outdir = extrametapy.extraMetaPy.outdir
             exiftool.main(outfile, outdir)
+
+        elif 'pw2mask' in self.module:
+            pw2mask.main()
 
 
     def do_set(self, args):
@@ -233,6 +247,17 @@ class osfPrompt(Cmd):
             elif 'URLLIST' in args.upper():
                 extrametapy.extraMetaPy.urllist = args.partition(' ')[2]
                 print("URLLIST => " + extrametapy.extraMetaPy.urllist)
+
+        elif 'pw2mask' in self.module:
+            if 'PASSWORDS_FILE' in args.upper():
+                pw2mask.pw2mask.passwords_file = args.partition(' ')[2]
+                print("PASSWORDS_FILE => " + pw2mask.pw2mask.passwords_file)
+            elif 'MASK_FILE' in args.upper():
+                pw2mask.pw2mask.mask_file = args.partition(' ')[2]
+                print("MASK_FILE => " + pw2mask.pw2mask.mask_file)
+            elif 'COMMON_COUNT' in args.upper():
+                pw2mask.pw2mask.common_count = int(args.partition(' ')[2])
+                print("COMMON_COUNT => " + str(pw2mask.pw2mask.common_count))
 
 
     def complete_set(self, text, line, begidx, endidx): # Set autocomplete
