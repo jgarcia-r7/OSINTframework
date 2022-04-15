@@ -32,17 +32,17 @@ colors = [GREEN, RED, BLUE, WHITE, YELLOW, CYAN, PINK, BRIGHT, NORM, RST] # Colo
 osint_art = text2art("OSINT\nframework", "random",)
 for color in colors: # Makeshift rainbow loading screen :)
     print((color + "\r[*] Loading OSINTframework...\r" + RST), end="")
-    sleep(.5)
+    sleep(.25)
 print()
-sleep(3)
+sleep(2)
 os.system('clear')
 print(BRIGHT + RED + osint_art + RST)
 
 
 # Information on OSINTframework.
-print(RED + "=[ OSINTframework v0.1 ]=" + RST)
+print(RED + "=[ OSINTframework v0.1a ]=" + RST)
 print(BRIGHT + PINK + "=[ Written by. Jessi ]=" + RST)
-print(YELLOW + "=[ 4 modules ]=\n" + RST)
+print(YELLOW + "=[ 5 modules ]=\n" + RST)
 
 
 # Module list - for autocomplete
