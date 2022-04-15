@@ -19,6 +19,7 @@ from datetime import datetime
 # Define colorama colors.
 GREEN = Fore.GREEN
 RED = Fore.RED
+BLUE = Fore.BLUE
 WHITE = Fore.WHITE
 YELLOW = Fore.YELLOW
 CYAN = Fore.CYAN
@@ -124,10 +125,10 @@ Module Options (auxiliary/extrametapy):
 
 def main():
     extraMetaPy.create_dir()
-    print(CYAN + "\n[*]" + RST + " Google Dorking for specified filetype(s) on domain: " + extraMetaPy.domain + " with limit " + str(extraMetaPy.limit) + "...")
+    print(BLUE + "\n[*]" + RST + " Google Dorking for specified filetype(s) on domain: " + extraMetaPy.domain + " with limit " + str(extraMetaPy.limit) + "...")
     extraMetaPy.dork()
     extraMetaPy.count_urls()
     print(GREEN + "[+]" + RST + " URLs written to {}".format(extraMetaPy.urllist))
-    print(CYAN + "[*]" + RST + " Downloading files...")
+    print(BLUE + "[*]" + RST + " Downloading files...")
     extraMetaPy.download_url()
     extraMetaPy.count_files()
