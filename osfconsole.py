@@ -11,7 +11,7 @@ from cmd import Cmd
 from colorama import Fore, Style
 from time import sleep
 from art import *
-from modules.auxiliary import dork, breachdb,  intelx, extrametapy, exiftool, pw2mask
+from modules.auxiliary import dork, breachdb, intelx, extrametapy, exiftool, pw2mask
 
 # Define colorama colors.
 GREEN = Fore.GREEN
@@ -243,7 +243,7 @@ class osfPrompt(Cmd):
                 extrametapy.extraMetaPy.outfile = args.partition(' ')[2]
                 print("OUTFILE => " + extrametapy.extraMetaPy.outfile)
             elif 'OUTDIR' in args.upper():
-                extrametapy.extraMetaPy.outdir = args.partition(' ')[2]
+                extrametapy.extraMetaPy.outdir = os.path.join(args.partition(' ')[2], '')
                 print("OUTDIR => " + extrametapy.extraMetaPy.outdir)
             elif 'URLLIST' in args.upper():
                 extrametapy.extraMetaPy.urllist = args.partition(' ')[2]
