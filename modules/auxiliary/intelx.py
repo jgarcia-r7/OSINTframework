@@ -8,6 +8,7 @@ from colorama import Fore, Style
 # Define colorama colors.
 GREEN = Fore.GREEN
 RED = Fore.RED
+BLUE = Fore.BLUE
 WHITE = Fore.WHITE
 YELLOW = Fore.YELLOW
 CYAN = Fore.CYAN
@@ -75,5 +76,5 @@ Module Options (auxiliary/intelx_search):
 
 
 def main():
-    print(CYAN + "\n[*]" + RST + " Searching for email addressess for domain: " + IntelX.domain + " with limit " + str(IntelX.limit) + "...")
+    print(BLUE + "\n[*]" + RST + " Searching for email addressess for domain: " + IntelX.domain + " with limit " + str(IntelX.limit) + "...")
     IntelX.search()
