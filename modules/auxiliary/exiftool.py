@@ -12,6 +12,7 @@ from colorama import Fore, Style
 # Define colorama colors.
 GREEN = Fore.GREEN
 RED = Fore.RED
+BLUE = Fore.BLUE
 WHITE = Fore.WHITE
 YELLOW = Fore.YELLOW
 CYAN = Fore.CYAN
@@ -58,7 +59,7 @@ class ExifTool(object): # Define ExifTool class.
     
     
 def main(outfile, outdir):
-    print(CYAN + "[*]" + RST + " Extracting metadata...")
+    print(BLUE + "[*]" + RST + " Extracting metadata...")
     sleep(2)
     o = open(outfile, 'w+')
     with ExifTool() as e:
