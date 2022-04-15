@@ -9,6 +9,7 @@ from colorama import Fore, Style
 # Define colorama colors.
 GREEN = Fore.GREEN
 RED = Fore.RED
+BLUE = Fore.BLUE
 WHITE = Fore.WHITE
 YELLOW = Fore.YELLOW
 CYAN = Fore.CYAN
@@ -79,7 +80,7 @@ Module Options (auxiliary/pw2mask):
 
 
 def main():
-    print(CYAN + "\n[*]" + RST + " Processing passwords...\n")
+    print(BLUE + "\n[*]" + RST + " Processing passwords...\n")
     sleep(1.5)
     pw2mask.process()
     pw2mask.table_func()
