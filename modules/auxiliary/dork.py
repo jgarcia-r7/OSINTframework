@@ -8,6 +8,7 @@ from time import sleep
 # Define colorama colors.
 GREEN = Fore.GREEN
 RED = Fore.RED
+BLUE = Fore.BLUE
 WHITE = Fore.WHITE
 YELLOW = Fore.YELLOW
 CYAN = Fore.CYAN
@@ -51,5 +52,5 @@ Module Options (auxiliary/google_dork):
 
 
 def main():
-    print(CYAN + "\n[*]" + RST + " Running query: " + pyDork.query + " with limit " + str(pyDork.limit) + "...")
+    print(BLUE + "\n[*]" + RST + " Running query: " + pyDork.query + " with limit " + str(pyDork.limit) + "...")
     pyDork.init_query()
