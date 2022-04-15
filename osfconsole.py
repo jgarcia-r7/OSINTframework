@@ -16,6 +16,7 @@ from modules.auxiliary import dork, breachdb,  intelx, extrametapy, exiftool, pw
 # Define colorama colors.
 GREEN = Fore.GREEN
 RED = Fore.RED
+BLUE = Fore.BLUE
 WHITE = Fore.WHITE
 YELLOW = Fore.YELLOW
 CYAN = Fore.CYAN
@@ -25,7 +26,7 @@ DIM = Style.DIM
 NORM = Style.NORMAL
 RST = Style.RESET_ALL
 
-colors = [GREEN, RED, WHITE, YELLOW, CYAN, PINK, BRIGHT, NORM, RST] # Colors dictionary.
+colors = [GREEN, RED, BLUE, WHITE, YELLOW, CYAN, PINK, BRIGHT, NORM, RST] # Colors dictionary.
 
 # Splash Screen!
 osint_art = text2art("OSINT\nframework", "random",)
@@ -39,9 +40,9 @@ print(BRIGHT + RED + osint_art + RST)
 
 
 # Information on OSINTframework.
-print(RED + "=[ OSINTframework v0.1a ]=" + RST)
+print(RED + "=[ OSINTframework v0.1 ]=" + RST)
 print(BRIGHT + PINK + "=[ Written by. Jessi ]=" + RST)
-print(YELLOW + "=[ 5 modules ]=\n" + RST)
+print(YELLOW + "=[ 4 modules ]=\n" + RST)
 
 
 # Module list - for autocomplete
@@ -119,8 +120,8 @@ class osfPrompt(Cmd):
 
     def do_use(self, args): # Load a module
         if not args == '':
-            print(CYAN + "\n[*]" + RST + " Loading {} module\n".format(args))
-            sleep(.25)
+            print(BLUE + "\n[*]" + RST + " Using {}".format(args))
+            sleep(.15)
             self.module = args
             self.prompt = DIM + 'osf' + RST + "(" + RED + args + RST + ")> " + RST
         elif args == '':
