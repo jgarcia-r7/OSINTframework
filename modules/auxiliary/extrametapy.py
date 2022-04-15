@@ -101,10 +101,10 @@ Module Options (auxiliary/extrametapy):
                         r = urllib.request.urlretrieve(url, filename)
                     except urllib.error.HTTPError as exception:
                         if i == 2:
-                            print(RED + "[-]" + RST + " Download failed for "+ url + " (" + DIM + exception + RST + ")")
+                            print(RED + "[-]" + RST + " Download failed for "+ url + " (" + DIM + str(exception) + RST + ")")
                     except urllib.error.ContentTooShortError as exception:
                         if i == 2:
-                            print(RED + "[-]" + RST + " Download failed for "+ url + " (" + DIM + exception + RST + ")")
+                            print(RED + "[-]" + RST + " Download failed for "+ url + " (" + DIM + str(exception) + RST + ")")
                     except:
                         if i == 2:
                             print(RED + "[-]" + RST + " Download failed for " + url + " (" + DIM + "Unknown error" + RST + ")")
