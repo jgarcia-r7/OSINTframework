@@ -127,7 +127,7 @@ class osfPrompt(Cmd):
                 self.prompt = DIM + 'osf' + RST + "(" + RED + args + RST + ")> " + RST
             else:
                 print(RED + "\n[*]" + RST + " Module doesn't exist! Use 'list' to see available modules."
-        elif args == '':
+        else:
             self.prompt = DIM + 'osf' + RST + '> ' +  RST
             self.module = ''
 
