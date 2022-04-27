@@ -120,10 +120,13 @@ class osfPrompt(Cmd):
 
     def do_use(self, args): # Load a module
         if not args == '':
-            print(BLUE + "\n[*]" + RST + " Using {}".format(args))
-            sleep(.15)
-            self.module = args
-            self.prompt = DIM + 'osf' + RST + "(" + RED + args + RST + ")> " + RST
+            if args in modules:
+                print(BLUE + "\n[*]" + RST + " Using {}".format(args))
+                sleep(.15)
+                self.module = args
+                self.prompt = DIM + 'osf' + RST + "(" + RED + args + RST + ")> " + RST
+            else:
+                print(RED + "\n[*]" + RST + " Module doesn't exist! Use 'list' to see available modules."
         elif args == '':
             self.prompt = DIM + 'osf' + RST + '> ' +  RST
             self.module = ''
