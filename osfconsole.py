@@ -208,7 +208,10 @@ class osfPrompt(Cmd):
                 print("OUTFILE => " + dork.pyDork.outfile)
 
         elif 'intelx_search' in self.module: # Intelx module settings
-            if 'DOMAIN' in args.upper():
+            if 'API_KEY' in args.upper():
+                intelx.IntelX.api_key = args.partition(' ')[2]
+                print("API_KEY => " + intelx.IntelX.api_key)
+            elif 'DOMAIN' in args.upper():
                 intelx.IntelX.domain = args.partition(' ')[2]
                 print("DOMAIN => " + intelx.IntelX.domain)
             elif 'LIMIT' in args.upper():
