@@ -24,7 +24,7 @@ RST = Style.RESET_ALL
 # BreachDB Class
 class BreachDB:
 
-    apiurl = 'https://pwnd.tiden.io/search'
+    apiurl = 'https://search.breachinator.com/search'
     domain = ''
     api_key = ''
     limit = 10
@@ -48,7 +48,7 @@ Module Options (auxiliary/breachdb):
 
     @classmethod
     def init_query(cls):
-        headers = {"User-Agent": "Mozilla/5.0", "Authorization": "apikey {}".format(cls.api_key)}
+        headers = {"User-Agent": "Mozilla/5.0", "Authorization": "apiKey {}".format(cls.api_key)}
         params = {"domain": cls.domain, "limit": cls.limit}
         sleep(2)
 
@@ -90,5 +90,5 @@ Module Options (auxiliary/breachdb):
 
 
 def main():
-    print(BLUE + "\n[*]" + RST + " Querying pwnd.tiden.io for domain: " + BreachDB.domain + " with limit " + str(BreachDB.limit) + "...")
+    print(BLUE + "\n[*]" + RST + " Querying search.breachinator.com for domain: " + BreachDB.domain + " with limit " + str(BreachDB.limit) + "...")
     BreachDB.init_query()
