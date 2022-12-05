@@ -2,7 +2,7 @@
 OSINTframework: Fully modular OSINT framework kit.
 
 ### Changelog 12/05/22
-- Updated IntelX module to reflect recent changes implemented by Phonebook.cz and IntelX.io (Phonebook.cz was experiencing abuse of their api key). Module now requires you to have your own IntelX api key (they have a free option) as the tool now longer grabs an api key from Phonebook.cz. 
+- Updated IntelX module to reflect recent changes implemented by Phonebook.cz and IntelX.io (Phonebook.cz was experiencing abuse of their api key). Module now requires you to have your own IntelX api key (they have a free option) as the tool no longer grabs an api key from Phonebook.cz. 
 - Updated BreachDB module to use the new Breachinator endpoint, still requires api key.  
 - Updated osfconsole to implement new IntelX module setting.
 
