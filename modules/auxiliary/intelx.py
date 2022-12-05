@@ -21,11 +21,8 @@ RST = Style.RESET_ALL
 # intelx class
 class IntelX:
 
-    r_api_key = requests.get("https://phonebook.cz",headers={"User-Agent":"Mozilla/5.0"}) # Requsts latest api key from phonebook.cz.
-    for line in r_api_key.text.split("\n"):
-        if "var API_KEY" in line:
-            api_key = line.replace("var API_KEY = '","").replace("';","").replace(" ","").strip() # Strip api key from request text.
-    api_url = 'public.intelx.io'
+    api_key = ''
+    api_url = '2.intelx.io'
     headers = {"User-Agent": "Mozilla/5.0", "Accept-Encoding": "gzip, deflate", "Accept": "*/*", "Origin": "https://phonebook.cz", "Referer": "https://phonebook.cz/", "Content-Type": "application/x-www-form-urlencoded"}
 
     domain = ''
@@ -40,6 +37,7 @@ Module Options (auxiliary/intelx_search):
                 
     Name                  Description                 Current Setting
     ----                  -----------                 ---------------
+    API_KEY               IntelX API Key              {cls.api_key}
     DOMAIN                Target domain               {cls.domain}
     LIMIT                 Results limit               {cls.limit}
     OUTFILE               Output file                 {cls.outfile}
